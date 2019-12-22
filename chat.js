@@ -18,5 +18,7 @@ io.on('connection', (socket)=>{
     })
     socket.on('newMessageToServer', (msg) =>{
        console.log(msg) 
+       io.emit('messageToClients', {text:msg.text})
+
     })
 })
